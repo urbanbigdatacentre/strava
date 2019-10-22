@@ -35,3 +35,5 @@ strava set up
 
 
 ##Maintenance
+
+1. Run maintenance.sql
