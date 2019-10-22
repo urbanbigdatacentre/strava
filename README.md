@@ -34,6 +34,6 @@ strava set up
     populate **month_range** column  to add month range value
 
 
-##Maintenance
+## Maintenance
 
 1. Run maintenance.sql
