@@ -1,0 +1,11 @@
+--rename schema_name, geography_name and YYYY to required values
+
+vacuum analyze schema_name.geography_name_YYYY_ride_edge_alignment_hourly ;
+vacuum analyze schema_name.geography_name_YYYY_ride_edge_rollup_month_total ;
+vacuum analyze schema_name.geography_name_YYYY_ride_edge_rollup_year_total ;
+vacuum analyze schema_name.geography_name_YYYY_ride_node_alignment_hourly ;
+vacuum analyze schema_name.geography_name_YYYY_ride_node_rollup_month_total ;
+vacuum analyze schema_name.geography_name_YYYY_ride_node_rollup_year_total ;
+vacuum analyze schema_name.geography_name_YYYY_ride_od_rollup_month_total ;
+vacuum analyze schema_name.geography_name_YYYY_ride_od_hourly ;
+vacuum analyze schema_name.geography_name_YYYY_ride_od_rollup_total ;

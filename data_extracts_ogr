@@ -1,0 +1,24 @@
+-- request you db access at administrator
+--replace YYYY to the year extract is needed
+--replace schema_name to actual schema name
+
+ogr2ogr -progress -f CSV  geography_name_YYYY_ride_edge_alignment_hourly.csv  pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'"  schema_name.geography_name_YYYY_ride_edge_alignment_hourly
+ogr2ogr -progress -f CSV  geography_name_YYYY_ride_edge_rollup_month_total.csv  pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'"  schema_name.geography_name_YYYY_ride_edge_rollup_month_total
+ogr2ogr -progress -f CSV  geography_name_YYYY_ride_edge_rollup_year_total.csv  pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'"  schema_name.geography_name_YYYY_ride_edge_rollup_total
+ogr2ogr -progress -f CSV  geography_name_YYYY_ride_node_alignment_hourly.csv  pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'"  schema_name.geography_name_YYYY_ride_node_alignment_hourly
+ogr2ogr -progress -f CSV  geography_name_YYYY_ride_nodes_rollup_total.csv  pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'"  schema_name.geography_name_YYYY_ride_nodes_rollup_total
+ogr2ogr -progress -f CSV  geography_name_YYYY_ride_node_rollup_month_total.csv  pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'"  schema_name.geography_name_YYYY_ride_node_rollup_month_total
+ogr2ogr -progress -f CSV  geography_name_YYYY_ride_od_rollup_month_total.csv  pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'"  schema_name.geography_name_YYYY_ride_od_rollup_month_total
+ogr2ogr -progress -f CSV  geography_name_YYYY_ride_od_rollup_total.csv  pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'"  schema_name.geography_name_YYYY_ride_od_rollup_total
+ogr2ogr -progress -f CSV  geography_name_YYYY_ride_od_hourly.csv  pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'"  schema_name.geography_name_YYYY_ride_od_hourly
+
+
+--- partial extracts
+--e.g July-Dec
+ogr2ogr -progress -f CSV  geography_name_YYYY_ride_edge_alignment_hourly_07_12.csv  pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'" -SQL "SELECT*FROM schema_name.geography_name_YYYY_ride_edge_alignment_hourly where day>=182"
+ogr2ogr -progress -f CSV  geography_name_YYYY_ride_edge_rollup_month_total_07_12.csv  pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'" -SQL "SELECT*from schema_name.geography_name_YYYY_ride_edge_rollup_month_total where month_n>=7"
+ogr2ogr -progress -f CSV  geography_name_YYYY_ride_edge_rollup_year_total_07_12.csv pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'"   -SQL "SELECT*FROM schema_name.geography_name_YYYY_ride_edge_rollup_year_total where month_range ='7-9' or month_range ='10-12'"
+ogr2ogr -progress -f CSV  geography_name_YYYY_ride_node_alignment_hourly_07_12.csv  pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'"  -SQL "SELECT*FROM schema_name.geography_name_YYYY_ride_node_alignment_hourly WHERE day>=182"
+ogr2ogr -progress -f CSV  geography_name_YYYY_ride_node_rollup_month_total_07_12.csv  pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'" -SQL "SELECT*FROM schema_name.geography_name_YYYY_ride_node_rollup_month_total WHERE month_n>=7"
+ogr2ogr -progress -f CSV  geography_name_YYYY_ride_od_hourly_07_12.csv  pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'"  -SQL "SELECT*FROM schema_name.geography_name_YYYY_ride_od_hourly where day>=182"
+ogr2ogr -progress -f CSV  geography_name_YYYY_ride_od_rollup_month_total_07_12.csv  pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'" -SQL "SELECT*from schema_name.geography_name_YYYY_ride_od_rollup_month_total where month_n>=7"
