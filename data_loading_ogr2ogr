@@ -1,0 +1,14 @@
+#OGR data loading scripts CSV to Postgres
+#gis data
+#please replace databasename, username, password, host, port, schema_name
+
+ogr2ogr -progress -append -f Postgresql pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'"   -nln schema_name.table_name_where_data_to_be_loaded  shapefile_name.shp
+
+#csv data
+#similar replace placeholders
+
+ogr2ogr -progress -append -f Postgresql pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'"   -nln schema_name.table_name_where_data_to_be_loaded data.csv
+
+#month rollup example
+
+ogr2ogr -progress -append -f Postgresql pg:"dbname='databasename'  user='USERNAME' password='PASSWORD!' host='host' port='port'"   -nln scotland.scotland_2018_ride_edge_rollup_month_total scotland_20180101_20180331_ride_rollup_total.csv
