@@ -12,7 +12,9 @@ strava set up
 
 **N.B!** to run the following scripts the [GDAL library](https://gdal.org/download.html) should be installed  
 
-4. QA
+## Raw data QA
+
+to be updated
 
 ## Data Loading
 
@@ -37,3 +39,7 @@ strava set up
 ## Maintenance
 
 1. Run maintenance.sql
+
+## Processed data QA
+
+Run  [Jupyter notebook](strava/QA/strava_data_qa.ipynb) to compare historical data with newly loaded data.
